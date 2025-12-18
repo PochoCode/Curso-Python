@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizzaria Fantástica</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="images/favicon.png">
+</head>
+<body>
+    <header>
+        <h1>Pizzaria Fantástica</h1>
+        <nav>
+            <ul>
+                <li><a href="#cardapio">Cardápio</a></li>
+                <li><a href="#sobre-nos">Sobre Nós</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="cardapio">
+            <h2>Nosso Cardápio</h2>
+            <ul>
+                <li>
+                    <h3>Calabresa</h3>
+                    <p>Molho de tomate, queijo mussarela e calabresa fatiada.</p>
+                    <img src="../images/calabresa.jpg" alt="Pizza de Calabresa">
+                </li>
+                <li>
+                    <h3>Margherita</h3>
+                    <p>Molho de tomate, queijo mussarela, manjericão fresco e tomate.</p>
+                    <img src="../images/margherita.jpg" alt="Pizza Margherita">
+                </li>
+                <li>
+                    <h3>Frango com Catupiry</h3>
+                    <p>Molho de tomate, queijo mussarela, frango desfiado e catupiry.</p>
+                    <img src="../images/frango_catupiry.jpg" alt="Pizza de Frango com Catupiry">
+                </li>
+                <li>
+                    <h3>Quatro Queijos</h3>
+                    <p>Molho de tomate, queijo mussarela, provolone, parmesão e gorgonzola.</p>
+                    <img src="../images/quatro_queijos.jpg" alt="Pizza Quatro Queijos">
+                </li>
+            </ul>
+        </section>
+
+        <section id="sobre-nos">
+            <h2>Sobre Nós</h2>
+            <p>A Pizzaria Fantástica nasceu da paixão por sabores autênticos e ingredientes de qualidade. Nossa missão é levar até você a melhor experiência em pizza, com uma massa fresca e um recheio inesquecível.</p>
+        </section>
+
+        <section id="contato">
+            <h2>Contato</h2>
+            <p><strong>Endereço:</strong> Rua da Pizza, 123 - Bairro Saboroso</p>
+            <p><strong>Telefone:</strong> (99) 99999-8888</p>
+            <p><strong>Horário de Funcionamento:</strong> Terça a Domingo, das 18h às 23h</p>
+
+            <form id="register-form" action="#" method="post" novalidate>
+                <h3>Crie sua Conta para Pedir</h3>
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <span class="error-message" id="nome-error"></span>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="error-message" id="email-error"></span>
+
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+                <span class="error-message" id="senha-error"></span>
+
+                <button type="submit">Criar Conta</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <div class="social-links">
+            <a href="#" title="Facebook">Facebook</a>
+            <a href="#" title="Instagram">Instagram</a>
+            <a href="#" title="Twitter">Twitter</a>
+        </div>
+        <p>&copy; 2025 Pizzaria Fantástica. Todos os direitos reservados.</p>
+    </footer>
+
+    <a href="#" id="voltar-topo" class="voltar-topo">&uarr;</a>
+    <script src="script.js"></script>
+</body>
+</html>

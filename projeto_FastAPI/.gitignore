@@ -1,0 +1,37 @@
+# Arquivos de ambiente
+# Nunca comite arquivos com senhas, chaves de API ou outras informações sensíveis.
+.env
+.env.*
+
+# Banco de dados local
+# O banco de dados local não deve ser versionado.
+banco.db
+*.sqlite3
+
+# Cache do Python
+# Arquivos de cache e bytecode gerados pelo Python.
+__pycache__/
+*.pyc
+*.pyo
+*~
+
+# Diretórios de ambiente virtual
+# Evita o upload de todas as bibliotecas instaladas no seu ambiente.
+.venv/
+venv/
+ENV/
+env/
+
+# Arquivos de configuração de IDEs
+# Arquivos específicos do editor de código que não são relevantes para outros desenvolvedores.
+.vscode/
+.idea/
+
+# Artefatos de teste e build
+# Arquivos gerados durante testes e o processo de build do projeto.
+.pytest_cache/
+.coverage
+htmlcov/
+build/
+dist/
+*.egg-info/

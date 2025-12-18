@@ -1,0 +1,35 @@
+[
+    {
+        "cep": "85819-210",
+        "logradouro": "Rua Filosofia",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "Universitário",
+        "localidade": "Cascavel",
+        "uf": "PR",
+        "estado": "Paraná",
+        "regiao": "Sul",
+        "ibge": "4104808",
+        "gia": "",
+        "ddd": "45",
+        "siafi": "7493"
+    },
+    {
+        "cep": "85819-110",
+        "logradouro": "Rua Universitária",
+        "complemento": "",
+        "unidade": "",
+        "bairro": "Universitário",
+        "localidade": "Cascavel",
+        "uf": "PR",
+        "estado": "Paraná",
+        "regiao": "Sul",
+        "ibge": "4104808",
+        "gia": "",
+        "ddd": "45",
+        "siafi": "7493"
+    },
+    {
+        "erro": "true"
+    }
+]
