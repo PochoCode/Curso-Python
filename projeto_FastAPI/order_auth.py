@@ -42,6 +42,10 @@ async def auth():
     """
     return {"mensagem":"Voce esta autenticando"}
 
+@auths.get("/me", response_model=UsuarioEsquema)
+async def ler_dados_usuario(usuario: Usuario = Depends(verificar_token)):
+    """Retorna os dados do usuário logado."""
+    return usuario
 
 @auths.post("/criar_conta")
 async def criar_conta(usuario_esquema: UsuarioCriacaoPublicaEsquema, session: Session = Depends(criar_session)):
@@ -49,6 +53,7 @@ async def criar_conta(usuario_esquema: UsuarioCriacaoPublicaEsquema, session: Se
     Cria uma nova conta de usuário. Esta rota é pública.
     O campo 'admin' será ignorado e sempre definido como False por segurança.
     """
+    print(Usuario)
     usuario = session.query(Usuario).filter(Usuario.email == usuario_esquema.email).first()
     if usuario:
         raise HTTPException(status_code=400, detail="E-mail ja cadastrado")
@@ -59,7 +64,6 @@ async def criar_conta(usuario_esquema: UsuarioCriacaoPublicaEsquema, session: Se
         nome=usuario_esquema.nome,
         email=usuario_esquema.email,
         senha=senha_criptografada,
-        telefone=usuario_esquema.telefone,
         admin=False, # Camada extra de segurança, garantindo que o usuário nunca será admin
         ativo=usuario_esquema.ativo
     )
@@ -85,7 +89,7 @@ async def admin_criar_usuario(usuario_esquema: UsuarioEsquema, session: Session 
     # Cria o novo usuário, respeitando o valor do campo 'admin' enviado
     novo_usuario = Usuario(
         nome=usuario_esquema.nome, email=usuario_esquema.email, senha=senha_criptografada,
-        telefone=usuario_esquema.telefone, admin=usuario_esquema.admin, ativo=usuario_esquema.ativo
+        admin=usuario_esquema.admin, ativo=usuario_esquema.ativo
     )
     session.add(novo_usuario)
     session.commit()

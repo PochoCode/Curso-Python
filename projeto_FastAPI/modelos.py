@@ -4,8 +4,8 @@ from sqlalchemy.orm import declarative_base, relationship
 from config import settings
  
 # A variável 'db' será inicializada no main.py durante o lifespan do app.
-db = None
-
+# Inicializa a engine imediatamente para que as dependências possam fazer o bind corretamente
+db = create_engine(settings.DATABASE_URL)
 #Criar a base do banco de dados
 
 Base = declarative_base()
@@ -17,16 +17,16 @@ class Usuario(Base):
     id= Column("id", Integer, primary_key=True, autoincrement=True)
     nome= Column("nome", String)
     email= Column("email", String, nullable=False)
-    telefone= Column("telefone", Integer)
+    
     senha= Column("senha", String)
     admin= Column("admin", Boolean, default=False)
     ativo= Column("ativo", Boolean, default=True)
 
-    def __init__(self, nome, email, senha, telefone, admin=False, ativo=True ) :
+    def __init__(self, nome, email, senha,  admin=False, ativo=True ) :
         self.nome = nome
         self.email= email
         self.senha= senha
-        self.telefone=telefone
+        
         self.admin= admin
         self.ativo=ativo
 #pedidos

@@ -12,17 +12,17 @@ orders = APIRouter(prefix="/ordens", tags=["ordens"],dependencies=[Depends(verif
 @orders.get("/")
 async def ordens():
     """
-    Essa é a rota padrão de pedidos onde com a função se comprobarão os pedidos.
+    Essa é a rota padrão de pedidos onde com a função se comprovarão os pedidos.
     """
     
     return {"mensagem":"Voce acessou a lista de pedidos",
             "pedidos":"/ordens/listar"}
 
 @orders.post("/pedido")
-
-async def criar_pedido(pedido_esquema : PedidosEsquema,session: Session= Depends(criar_session), usuario: Usuario = Depends(verificar_token)) :
-    """Essa é a rota para criar um pedido, indique um usuario existente e faça o pedido"""
-    novo_pedido = Pedidos( id_usuario = pedido_esquema.usuario)
+async def criar_pedido(session: Session= Depends(criar_session), usuario: Usuario = Depends(verificar_token)) :
+    """Essa é a rota para criar um pedido. O usuário é identificado pelo token."""
+    # Usa o ID do usuário autenticado (token)
+    novo_pedido = Pedidos(id_usuario=usuario.id)
     session.add(novo_pedido)
     session.commit()
     return{"mensagem":f"Pedido criado com sucesso ID do pedido: {novo_pedido.id}"}

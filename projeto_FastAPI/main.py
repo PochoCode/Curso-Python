@@ -13,7 +13,6 @@ from fastapi.middleware.cors import CORSMiddleware
 @asynccontextmanager
 async def lifespan(app: FastAPI):
     # Código que roda ANTES do servidor iniciar
-    modelos.db = create_engine(settings.DATABASE_URL)
     yield
     # Código que roda DEPOIS que o servidor parar
 app=FastAPI(lifespan=lifespan)
@@ -23,6 +22,7 @@ origins = [
     "http://localhost:8080", # Porta comum para desenvolvimento frontend
     "http://127.0.0.1:5500", # Porta padrão do Live Server do VSCode para o index.html
     "null", # Permite requisições de file:// (quando você abre o HTML diretamente)
+    "*", # PERMITE TUDO (Use apenas para testes locais/desenvolvimento)
     # Adicione aqui a URL do seu frontend em produção
 ]
 

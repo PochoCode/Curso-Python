@@ -87,7 +87,7 @@ nav ul li a:hover {
 footer {
     text-align: center;
     padding: 20px;
-    margin-top: 20px;
+    margin-top: 0;
     background-color: #333;
     color: #fff;
 }
@@ -171,6 +171,17 @@ footer {
     background-color: #6954c9; /* Um tom mais claro ao passar o mouse */
 }
 
+/* Estilo para os links de troca de formulário (Login/Registro) */
+.toggle-form-link {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 0.9em;
+}
+
+.toggle-form-link a {
+    color: #a18dff;
+    text-decoration: none;
+}
 /* Estilos para o botão "Voltar ao Topo" */
 .voltar-topo {
     display: none; /* Começa escondido */

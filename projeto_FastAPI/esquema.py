@@ -5,7 +5,6 @@ class UsuarioEsquema(BaseModel) :
     nome: str
     email: str
     senha: str
-    telefone: int
     admin: bool = False
     ativo: bool = True
     class Config:
@@ -16,8 +15,8 @@ class UsuarioCriacaoPublicaEsquema(BaseModel):
     nome: str
     email: str
     senha: str
-    telefone: str
     ativo: bool = True
+
     class Config:
         from_attributes=True
 
